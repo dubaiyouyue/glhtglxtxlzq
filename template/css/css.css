@@ -1,0 +1,127 @@
+/*sx*/
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;    width: 100%;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+.cssdfsfdiv{
+  background-color: #eee;
+  margin-bottom: 9px;
+  padding: 5px;
+  width: 282px;
+  margin-top: 9px;
+}
+/*jsb*/
+.fgx{
+    height: 1px;background-color:red;width: 100%;
+}
+.xm{
+    margin-top: 9px;
+    background-color: #ddd;
+    padding: 3px;
+    margin-bottom: 30px;
+}
+.xmm{
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 9px 3px;
+    color: red;
+    font-weight: bold;
+    background-color: #EFEFDA;
+    border-bottom: none;
+    font-size: 14px;
+}
+.xdiv{
+    padding: 5px;
+    border: 1px solid #fff;
+    margin-top: 9px;
+    background-color: #eee;
+}
+.jda{  padding: 3px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;}
+.jda:hover{
+    background-color: red;
+    color: #fff;
+    border:1px solid red;
+}
+/*tjxm*/
+.tjxminput{  padding: 3px;
+    width: 300px;}
+.tttss{  width: 500px;
+    height: 100px;
+    margin-top: 20px;}
+.ttjsssm{
+    padding: 5px;
+    width: 300px;
+    margin-top: 10px;
+    cursor: pointer;}
+/*dfgx*/
+.dfgx{height: 30px;width: 100%;}
+/*display none*/
+.cssnone{
+    display: none;
+}
+.r{color: red;}
+.nv{width: 1100px;margin: auto;background-color:#fff;}
+.xdiv1{background-color: #EFEFDA;
+    margin-top: 1px;}
+.b{color: #3385ff;}
+.bc{color: #2d78f4;}
+
+*{
+      margin: 0px;
+      padding: 0px;
+      outline: none;
+  }
+h1{margin-bottom: 9px;
+    background-color: #fff;
+    padding: 3px 5px;
+    font-weight: normal;}
+
+h1 a{
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    margin-right: 9px;
+}
+
+h1 a:hover{
+    background-color: #eee;
+    color: red;
+    padding: 0px 6px;
+}
+
+.innpp{
+    width: 900px;
+    height: 105px;
+    margin-top: 9px;
+    padding: 3px;
+}
+.mt{  margin-top: 18px;}
+
+
+
+
+
+
+
+

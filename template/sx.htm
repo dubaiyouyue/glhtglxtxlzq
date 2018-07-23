@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="UTF-8">
+<title>(单击)双击直接修改内容的代码</title>
+
+	<link rel="stylesheet" type="text/css" href="/template/css/css.css">
+<script src="/template/jquery.min.js"></script>
+</head>
+<style type="text/css" media="all">
+
+.dreamdu:hover, .hover {
+
+color: red;
+}
+</style>
+<script type="text/javascript">
+/*
+* 功能：使表格每行随鼠标的移动改变颜色
+*/
+function DreamduColorRows()
+{
+var dreamdurows = document.getElementsByTagName('tr');
+for ( var i = 0; i < dreamdurows.length; i++ )
+{
+if ( 'dreamdu' != dreamdurows[i].className.substr(0,7) )
+{
+continue;
+}
+if ( navigator.appName == 'Microsoft Internet Explorer' )
+{
+// ie不支持 :hover，所以...
+dreamdurows[i].onmouseover = function()
+{
+this.className += ' hover';
+}
+dreamdurows[i].onmouseout = function()
+{
+this.className = this.className.replace( ' hover', '' );
+}
+}
+}
+}
+window.onload=DreamduColorRows;
+</script>
+<body>
+<div class="cssdfsfdiv">
+<a href="/?index=sx&mod=zxg">最新修改</a>
+<a href="/?index=sx&s=dq">到期时间</a>
+<a href="/?index=sx&mod=yc">查看被隐藏的</a>
+<a href="/?index=add">添加</a> 
+</div>
+<div style="text-align:right;">(双击直接修改内容)</div>
+<!-- Table goes in the document BODY -->
+<table class="gridtable">
+<tr>
+	<th>ID</th><th>域名</th>
+	
+	<th>到期时间</th><th>公司名称</th>
+	
+
+	<th>项目测试地址</th>
+	<th>domain</th>
+	
+
+	
+	
+	
+
+	
+	<th>IDC商</th>
+	
+	<th>备注</th>
+	
+	<th>操作</th>
+	
+</tr>
+
+[tech_all_list;block=begin]
+<tr class="dreamdu">
+	<td>ID：[tech_all_list.id]</td>
+	<td><span id="1" ondblclick="edit(this,'domain','[tech_all_list.id]')">[tech_all_list.domain]</span></td>
+	
+	<td><span id="3" ondblclick="edit(this,'out_date','[tech_all_list.id]')">[tech_all_list.out_date]</span></td>
+	<td><span id="4" ondblclick="edit(this,'c_title','[tech_all_list.id]')">[tech_all_list.c_title]</span></td>
+	
+<td><span id="11" ondblclick="edit(this,'test_url','[tech_all_list.id]')">[tech_all_list.test_url]</span><p><a href="[tech_all_list.test_url]" target="_blank" >打开</a></p></td>
+
+	<td><span id="9" ondblclick="edit(this,'d_idc','[tech_all_list.id]')">[tech_all_list.d_idc]</span></td>
+	
+	
+	
+	
+	<td><span id="13" ondblclick="edit(this,'s_idc','[tech_all_list.id]')">[tech_all_list.s_idc]</span></td>
+	<td><span id="14" ondblclick="edit(this,'bz','[tech_all_list.id]')">[tech_all_list.bz]</span></td>
+	<td><a href="/?index=action&amp;mod=[var.zt_url]&amp;id=[tech_all_list.id]">[var.zt_str]</a></td>
+</tr>
+[tech_all_list;block=end]
+
+</table>
+<script>
+function edit(element,v_name,v_id){
+　var oldhtml = element.innerHTML;//获得元素之前的内容
+　var newobj = document.createElement('input');//创建一个input元素
+　newobj.type = 'text';//为newobj元素添加类型
+  newobj.value=oldhtml;
+　element.innerHTML = '';　　 //设置元素内容为空
+　element.appendChild(newobj);//添加子元素
+　newobj.focus();//获得焦点
+  //设置newobj失去焦点的事件
+　newobj.onblur = function(){
+   //下面应该判断是否做了修改并使用ajax代码请求服务端将id与修改后的数据提交
+   //alert(element.id);
+      //当触发时判断newobj的值是否为空，为空则不修改，并返回oldhtml
+      element.innerHTML = (this.value)  ? this.value : oldhtml;
+      //alert(this.value);//修改后的值
+		v_value=this.value;
+      if(this.value != oldhtml) aj_edit(v_id,v_name,v_value);
+   }
+}
+
+
+function aj_edit(v_id,v_name,v_value){//修改 ajax
+	$.ajax({
+	  url: '/?index=edit&id='+v_id+'&t_name='+v_name+'&t_v='+v_value+'&etime='+Math.random(),
+	  beforeSend: function(){
+
+	  },
+	  success: function(msg){
+		//alert(msg);
+		location.href = '/v.php?'+Math.random();
+	  }
+	});
+}
+</script>
+<div style="height: 10px;width: 100%;"></div>
+</body>
+</html>

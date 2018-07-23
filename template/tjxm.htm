@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/template/css/css.css">
+</head>
+<body>
+<form action="" method="post" id="myform" class="mt">
+    项目名称：
+    <input type="text" name="xm_name" class="tjxminput" id="xm_name" autocomplete="off"/>
+    <br />
+    项目说明：
+    <textarea class="tttss" name="xm_info" id="xm_info"></textarea>
+    <br />
+    提交内容：
+    <input type="button" class="ttjsssm" value="添加项目" onclick="tj();" />
+</form>
+<div class="dfgx"></div>
+<script>
+    function tj(){
+        var xn=document.getElementById('xm_name').value;
+        var xi=document.getElementById("xm_info").value;
+        if(!xn || !xi) {alert('请填写完整信息！');return false;}
+        document.getElementById("myform").submit();
+    }
+</script>
+</body>
+</html>

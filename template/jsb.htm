@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>技术部</title>
+    <link rel="stylesheet" type="text/css" href="/template/css/css.css">
+</head>
+<body>
+
+[xm_arr;block=begin]
+<div class="xm">
+<span class="xmm"><span class="b">【项目[xm_arr.id]】</span> [xm_arr.xm_name] 开始时间：[xm_arr.xm_time] <a href="javascript:if(confirm('确实该项目结款吗?'))location='/?index=jsb&a=jk&id=[xm_arr.id]&v=[var.sj_zzfd]'" class="[var.admin_css]">结款</a> </span>
+    <div class="xdiv xdiv1">备注：[xm_arr.xm_info] --<span class="r">[xm_arr.xm_user]</span></div>
+
+    <form action="" method="post" id="myform[xm_arr.id]"><input type="hidden" name="xm_id" value="[xm_arr.id]">
+        <p><textarea class="innpp" name="jd" id="jd[xm_arr.id]" ></textarea></p>
+        <p><input type="button" value="填写进度报告" class="jda" onclick="tj('[xm_arr.id]');"/></p>
+    </form>
+
+ [xm_arr.jd;strconv=no]
+    <br>&nbsp;&nbsp;没有了
+<br><br><br>
+
+</div>
+<div class="fgx"></div>
+
+[xm_arr;block=end]
+
+<div class="dfgx"></div>
+<script>
+    function tj(n){
+        var xn=document.getElementById('jd'+n).value;
+        if(!xn) {alert('请填写信息！');return false;}
+        document.getElementById('myform'+n).submit();
+    }
+</script>
+</body>
+</html>
